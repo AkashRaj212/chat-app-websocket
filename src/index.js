@@ -10,12 +10,12 @@ const app = express()
 const server = http.createServer(app)
 const io = socketio(server)
 
-const port = process.env.PORT || 3002
+const port = process.env.PORT || 3003
 const publicDirectoryPath = path.join(__dirname, '../')
 
 app.use(express.static(publicDirectoryPath))
 
-app.use('/.netlify/functions/api',router)
+
 
 io.on('connection', (socket) => {
     console.log('New WebSocket connection')
